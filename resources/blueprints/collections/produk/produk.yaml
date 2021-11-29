@@ -42,6 +42,16 @@ sections:
           instructions_position: above
           validate:
             - required
+      -
+        handle: deskripsi
+        field:
+          input_type: text
+          antlers: false
+          display: Deskripsi
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
   sidebar:
     display: Sidebar
     fields:
