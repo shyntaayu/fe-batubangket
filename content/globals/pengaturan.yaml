@@ -1,0 +1,10 @@
+title: Pengaturan
+data:
+  judul_halaman: 'Batu Bangket'
+  sub_judul_halaman: 'Lombok loooo'
+  logo:
+    - beras-bb.jpg
+  background_header: beras-bb.jpg
+  nomor_whatsapp: 2132323
+  robots_index: noindex
+  robots_follow: nofollow

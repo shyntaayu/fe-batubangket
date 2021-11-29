@@ -1,0 +1,55 @@
+title: Produk
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Nama
+          instructions_position: above
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: foto
+        field:
+          mode: list
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: Foto
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+      -
+        handle: harga
+        field:
+          input_type: number
+          antlers: false
+          display: Harga
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
