@@ -1,0 +1,25 @@
+<section class="product_list section_padding">
+  <div class="container">
+    <div class="product_list">
+      <div class="row">
+        {{ search:results }}
+
+        {{ if no_results }}
+        <h2>No results.</h2>
+        {{ else }}
+        <div class="col-lg-3 col-sm-3">
+          <div class="single_product_item">
+            <img src="{{foto}}" alt="#" class="img-fluid">
+            <h3> <a href="{{url}}">{{title}} -{{produk_unggulan}} -</a> </h3>
+            <p>Rp. {{harga format_number="0|.|."}}</p>
+          </div>
+        </div>
+
+
+        {{ /if }}
+
+        {{ /search:results }}
+      </div>
+    </div>
+  </div>
+</section>

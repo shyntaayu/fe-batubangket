@@ -1,0 +1,108 @@
+<!-- breadcrumb part start-->
+<section class="breadcrumb_part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner">
+                    <h2>{{title}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb part end-->
+
+<!-- product list part start-->
+<section class="product_list section_padding">
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-md-4">
+                <div class="product_sidebar">
+                    <div class="single_sedebar">
+                        <form action="#">
+                            <input type="text" name="#" placeholder="Search keyword">
+                            <i class="ti-search"></i>
+                        </form>
+                    </div>
+                    <div class="single_sedebar">
+                        <div class="select_option">
+                            <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
+                            <div class="select_option_dropdown">
+                                <p><a href="#">Category 1</a></p>
+                                <p><a href="#">Category 2</a></p>
+                                <p><a href="#">Category 3</a></p>
+                                <p><a href="#">Category 4</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single_sedebar">
+                        <div class="select_option">
+                            <div class="select_option_list">Type <i class="right fas fa-caret-down"></i> </div>
+                            <div class="select_option_dropdown">
+                                <p><a href="#">Type 1</a></p>
+                                <p><a href="#">Type 2</a></p>
+                                <p><a href="#">Type 3</a></p>
+                                <p><a href="#">Type 4</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-md-12">
+                <div class="product_sidebar">
+                    <div class="single_sedebar">
+                        <form action="/search">
+                            <input type="search" name="q" placeholder="Search keyword">
+                            <i class="ti-search"></i>
+                        </form>
+                    </div>
+                </div>
+                {{ collection:produk limit="10" paginate="true" as="produk"}}
+                <div class="product_list">
+                    <div class="row">
+                        {{ if no_results }}
+                        <p>Aww, there are no results.</p>
+                        {{ /if }}
+
+                        {{produk}}
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item">
+                                {{ if foto!=""}}
+                                <img src="{{foto}}" alt="#" class="img-fluid">
+                                {{ else }}
+                                <img src="{{pengaturan:logo_cv}}" alt="#" class="img-fluid">
+                                {{ /if }}
+                                <div style="padding: 30px 0 20px 10px;
+                                box-shadow: 0px 10px 20px 0px rgb(221 221 221 / 30%);">
+                                    <h3> <a href="{{url}}">{{title}}</a> </h3>
+                                    <p>Rp. {{harga format_number="0|.|."}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {{/produk}}
+
+                    </div>
+                    <!-- <div class="load_more_btn text-center">
+                        <a href="#" class="btn_3">Load More</a>
+                    </div> -->
+                </div>
+
+                {{ paginate }}
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item"><a class="page-link" href="{{ prev_page }}">⬅ Sebelumnya</a></li>
+                        <li class="page-item"><a class="page-link" style="text-decoration: none;">{{ current_page }}
+                                dari {{ total_pages }}
+                                halaman
+                                (Ada {{ total_items }} produk)</a></li>
+                        <li class="page-item"><a class="page-link" href="{{ next_page }}">Selanjutnya ➡</a></li>
+                    </ul>
+                </nav>
+                {{ /paginate }}
+
+                {{ /collection:produk }}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product list part end-->

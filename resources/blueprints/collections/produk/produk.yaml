@@ -28,8 +28,6 @@ sections:
           icon: assets
           listable: hidden
           instructions_position: above
-          validate:
-            - required
       -
         handle: harga
         field:
@@ -40,8 +38,6 @@ sections:
           icon: text
           listable: hidden
           instructions_position: above
-          validate:
-            - required
       -
         handle: deskripsi
         field:
@@ -50,6 +46,30 @@ sections:
           display: Deskripsi
           type: text
           icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: ukuran
+        field:
+          input_type: text
+          antlers: false
+          display: Ukuran
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: unggulan
+        field:
+          options:
+            ya: Ya
+            tidak: Tidak
+          inline: false
+          cast_booleans: false
+          default: tidak
+          display: Unggulan
+          type: radio
+          icon: radio
           listable: hidden
           instructions_position: above
   sidebar:
@@ -63,3 +83,18 @@ sections:
           localizable: true
           validate:
             - required
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+      -
+        handle: tags
+        field:
+          type: terms
+          taxonomies:
+            - tags
+          display: Tags
+          mode: select

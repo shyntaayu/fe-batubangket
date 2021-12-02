@@ -1,4 +1,4 @@
-<div class="pb-16 text-center">
+<!-- <div class="pb-16 text-center">
     <a href="https://statamic.com">
         <svg id="statamic-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 272.1" width="400">
             <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="99.153" y1="65.596" x2="150.124" y2="205.639">
@@ -18,4 +18,195 @@
         <a class="hover:bg-gray-200 p-2 rounded" href="https://statamic.dev" target="_blank" rel="noopener noreferrer">Documentation</a>
         <a class="hover:bg-gray-200 p-2 rounded" href="https://statamic.com/support" rel="noopener noreferrer">Get Support</a>
     </div>
-</div>
+</div> -->
+<!-- banner part start-->
+<section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <div class="banner_text">
+                    <div class="banner_text_iner">
+                        <h1>{{pengaturan:tagline}}</h1>
+                        <p>{{pengaturan:deskripsi| truncate:90}}</p>
+                        <a href="/produk" class="btn_1">Belanja Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner_img">
+        <img src="{{pengaturan:background_header}}" alt="#" class="img-fluid">
+        <img src="img/banner_pattern.png " alt="#" class="pattern_img img-fluid">
+    </div>
+</section>
+<!-- banner part start-->
+
+<!-- product list start-->
+<section class="single_product_list">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {{ collection:produk limit="2" unggulan:contains="ya" }}
+                <div class="single_product_iner">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="single_product_img">
+                                <img src="{{foto}}" class="img-fluid" alt="#">
+                                <img src="img/product_overlay.png" alt="#" class="product_overlay img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-6">
+                            <div class="single_product_content">
+                                <h5>Rp. {{harga format_number="0|.|."}}</h5>
+                                <h2> <a href="{{url}}">{{title}}</a> </h2>
+                                <a href="https://wa.me/{{pengaturan:nomor_whatsapp}}?text=Hai%20Kak%2C%20aku%20pesan%20{{title}}%20ini%20ya"
+                                    class="btn_3" target="_blank">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ /collection:produk }}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product list end-->
+
+
+<!-- trending item start-->
+<section class="trending_items">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_tittle text-center">
+                    <h2>Produk Unggulan</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {{ collection:produk unggulan:contains="ya" }}
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_product_item">
+                    <div class="single_product_item_thumb">
+                        {{ if foto}}
+                        <img src="{{foto}}" alt="#" class="img-fluid">
+                        {{ else }}
+                        All other images
+                        {{ /if }}
+
+                    </div>
+                    <h3> <a href="{{url}}">{{title}}</a> </h3>
+                    <p>Rp. {{harga format_number="0|.|."}}</p>
+                </div>
+            </div>
+            {{ /collection:produk }}
+        </div>
+    </div>
+</section>
+<!-- trending item end-->
+
+<!-- client review part here -->
+<section class="client_review">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="client_review_slider owl-carousel">
+                    <div class="single_client_review">
+                        <div class="client_img">
+                            <img src="img/client.png" alt="#">
+                        </div>
+                        <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to
+                            help alleviate human suffering.</p>
+                        <h5>- Micky Mouse</h5>
+                    </div>
+                    <div class="single_client_review">
+                        <div class="client_img">
+                            <img src="img/client_1.png" alt="#">
+                        </div>
+                        <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to
+                            help alleviate human suffering.</p>
+                        <h5>- Micky Mouse</h5>
+                    </div>
+                    <div class="single_client_review">
+                        <div class="client_img">
+                            <img src="img/client_2.png" alt="#">
+                        </div>
+                        <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to
+                            help alleviate human suffering.</p>
+                        <h5>- Micky Mouse</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- client review part end -->
+
+<!-- feature part here -->
+<section class="feature_part section_padding">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6">
+                <div class="feature_part_tittle">
+                    <h3>Credibly innovate granular
+                        internal or organic sources
+                        whereas standards.</h3>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="feature_part_content">
+                    <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic”
+                        sources. Credibly innovate granular internal or “organic” sources whereas high standards in
+                        web-readiness.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_feature_part">
+                    <img src="img/icon/feature_icon_1.svg" alt="#">
+                    <h4>Credit Card Support</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_feature_part">
+                    <img src="img/icon/feature_icon_2.svg" alt="#">
+                    <h4>Online Order</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_feature_part">
+                    <img src="img/icon/feature_icon_3.svg" alt="#">
+                    <h4>Free Delivery</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_feature_part">
+                    <img src="img/icon/feature_icon_4.svg" alt="#">
+                    <h4>Product with Gift</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- feature part end -->
+
+<!-- subscribe part here -->
+<section class="subscribe_part section_padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="subscribe_part_content">
+                    <h2>Get promotions & updates!</h2>
+                    <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic”
+                        sources credibly innovate granular internal .</p>
+                    <div class="subscribe_form">
+                        <input type="email" placeholder="Enter your mail">
+                        <a href="#" class="btn_1">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- subscribe part end -->
