@@ -51,7 +51,11 @@
                     <div class="row align-items-center justify-content-between">
                         <div class="col-lg-6 col-sm-6">
                             <div class="single_product_img">
-                                <img src="{{foto}}" class="img-fluid" alt="#">
+                                {{ if foto!=""}}
+                                <img src="{{foto}}" alt="#" class="img-fluid">
+                                {{ else }}
+                                <img src="{{pengaturan:logo_cv}}" alt="#" class="img-fluid">
+                                {{ /if }}
                                 <img src="img/product_overlay.png" alt="#" class="product_overlay img-fluid">
                             </div>
                         </div>
@@ -106,7 +110,7 @@
 <!-- trending item end-->
 
 <!-- client review part here -->
-<section class="client_review">
+<!-- <section class="client_review">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -139,11 +143,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- client review part end -->
 
 <!-- feature part here -->
-<section class="feature_part section_padding">
+<!-- <section class="feature_part section_padding">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-6">
@@ -188,7 +192,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- feature part end -->
 
 <!-- subscribe part here -->
@@ -197,13 +201,10 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="subscribe_part_content">
-                    <h2>Get promotions & updates!</h2>
-                    <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic”
-                        sources credibly innovate granular internal .</p>
-                    <div class="subscribe_form">
-                        <input type="email" placeholder="Enter your mail">
-                        <a href="#" class="btn_1">Subscribe</a>
-                    </div>
+                    <h2>Dapatkan promosi & pembaruan!</h2>
+                    <p>{{pengaturan:deskripsi}}</p>
+                    <a href="https://wa.me/{{pengaturan:nomor_whatsapp}}?text=Hai%20Kak%2C%20apakah%20ada%20promo%20produk%20%5Bmasukkan%20produk%5D%3F"
+                        class="genric-btn primary circle mt-3">Berlangganan</a>
                 </div>
             </div>
         </div>

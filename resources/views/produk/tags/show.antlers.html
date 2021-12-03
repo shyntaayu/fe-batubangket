@@ -6,7 +6,11 @@
                 {{results}}
                 <div class="col-lg-3 col-sm-3">
                     <div class="single_product_item">
+                        {{ if foto!=""}}
                         <img src="{{foto}}" alt="#" class="img-fluid">
+                        {{ else }}
+                        <img src="{{pengaturan:logo_cv}}" alt="#" class="img-fluid">
+                        {{ /if }}
                         {{produk_unggulan}}
                         <h3> <a href="{{url}}">{{title}} -{{produk_unggulan}} -</a> </h3>
                         <p>Rp. {{harga format_number="0|.|."}}</p>
